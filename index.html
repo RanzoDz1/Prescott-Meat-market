@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prescott Meat Market | Corpus Christi, TX | Fresh Meat & Groceries</title>
+  
+  <meta name="description" content="Prescott Meat Market in Corpus Christi has been your local one-stop shop since the 1950s. Fresh meats, everyday menudo, weekend barbacoa, groceries, and the lucky lottery spot in town!">
+  
+  <!-- Fonts: Montserrat for Headings (Bold/Classic), Inter for Body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GroceryStore",
+    "name": "Prescott Meat Market",
+    "image": "images/hero.jpg",
+    "url": "https://www.facebook.com/4414.Prescott/",
+    "telephone": "+13618557483",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4414 Prescott St",
+      "addressLocality": "Corpus Christi",
+      "addressRegion": "TX",
+      "postalCode": "78416",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "21:30"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "150"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Prescott Meat Market Home">
+        <span class="logo-main">PRESCOTT</span>
+        <span class="logo-sub">MEAT MARKET</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#offer" class="nav-link">Our Market</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#location" class="nav-link">Location</a></li>
+        </ul>
+      </nav>
+
+      <a href="tel:+13618557483" class="header-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        +1 361-855-7483
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-close" id="mobile-close" aria-label="Close mobile menu">✕</button>
+    <div class="logo" style="margin-bottom: var(--sp-2);">
+      <span class="logo-main">PRESCOTT</span>
+      <span class="logo-sub">MEAT MARKET</span>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#home" class="mobile-nav-link">Home</a></li>
+      <li><a href="#offer" class="mobile-nav-link">Our Market</a></li>
+      <li><a href="#about" class="mobile-nav-link">Why Choose Us</a></li>
+      <li><a href="#reviews" class="mobile-nav-link">Reviews</a></li>
+      <li><a href="#location" class="mobile-nav-link">Location & Hours</a></li>
+    </ul>
+    <a href="tel:+13618557483" class="mobile-phone-btn">Call Now: 361-855-7483</a>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-badge fade-up">Est. Mid 1950s</div>
+        <h1 class="hero-headline fade-up" style="animation-delay: 0.25s">
+          The Lucky Store In Town
+        </h1>
+        <p class="hero-sub fade-up" style="animation-delay: 0.35s">
+          From fresh premium meats and everyday cooked menudo, to groceries, cold beer, and lottery tickets. Come once, and you’ll definitely come back to your new one-stop shop!
+        </p>
+        
+        <div class="hero-actions fade-up" style="animation-delay: 0.45s">
+          <a href="#location" class="btn btn-gold">Visit Us Today</a>
+          <a href="tel:+13618557483" class="btn btn-outline">Call the Market</a>
+        </div>
+
+        <div class="hero-stats fade-up" style="animation-delay: 0.55s">
+          <div class="hero-stat">
+            <span class="stat-num">10% OFF</span>
+            <span class="stat-label">Meat Every Monday</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">Best</span>
+            <span class="stat-label">Menudo in Town</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">7 Days</span>
+            <span class="stat-label">Open 7 AM - 9:30 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint fade-up" style="animation-delay: 0.8s">
+        <span>Scroll</span>
+        <svg width="24" height="36" viewBox="0 0 24 36" fill="none"><rect x="4" y="2" width="16" height="32" rx="8" stroke="currentColor" stroke-width="2"/><circle class="scroll-dot" cx="12" cy="8" r="2"/></svg>
+      </div>
+    </section>
+
+    <!-- WHAT WE OFFER (8 Categories) -->
+    <section id="offer" class="section categories">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Our Selection</span>
+          <h2 class="section-title">Your One-Stop Shop</h2>
+          <p class="section-sub">Quality service, quick in & out, and everything you need for the week or the weekend BBQ.</p>
+        </div>
+        
+        <!-- 8 Card Grid -->
+        <div class="bento-grid">
+          
+          <article class="cat-card reveal" style="--delay:0.05s; background-image:url('images/cat-meat.jpg')" id="cat-meat">
+            <div class="cat-card-accent"></div>
+            <div class="cat-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 17.5L3 6V3h3l11.5 11.5c1.4-1.4 3.7-1.4 5.1 0 1.4 1.4 1.4 3.7 0 5.1-1.4 1.4-3.7 1.4-5.1 0z"/></svg>
+            </div>
+            <h3 class="cat-title">Fresh Meat</h3>
+            <p class="cat-desc">Premium fresh cuts of meat, perfectly prepared by our butchers. Enjoy 10% OFF all fresh meat every Monday!</p>
+            <div class="cat-arrow">&#8594;</div>
+          </article>
+
+          <article class="cat-card reveal" style="--delay:0.1s; background-image:url('images/cat-barbacoa.jpg')" id="cat-barbacoa">
+            <div class="cat-card-accent"></div>
+            <div class="cat-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="cat-title">Weekend Barbacoa</h3>
+            <p class="cat-desc">Authentic, slow-cooked beef barbacoa available every weekend. Choose from all-meat or mix—perfect for Sunday mornings.</p>
+            <div class="cat-arrow">&#8594;</div>
+          </article>
+
+          <article class="cat-card reveal" style="--delay:0.15s; background-image:url('images/cat-menudo.jpg')" id="cat-menudo">
+            <div class="cat-card-accent"></div>
+            <div class="cat-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12A10 10 0 012 12h20zM12 12V2M16 4l-4 8M8 4l4 8"/></svg>
+            </div>
+            <h3 class="cat-title">Everyday Menudo</h3>
+            <p class="cat-desc">Ready to eat, piping hot, traditional cooked menudo available every single day. Rated the best menudo in town!</p>
+            <div class="cat-arrow">&#8594;</div>
+          </article>
+
+          <article class="cat-card reveal" style="--delay:0.2s; background-image:url('images/cat-produce.jpg')" id="cat-produce">
+            <div class="cat-card-accent"></div>
+            <div class="cat-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM12 2v20"/></svg>
+            </div>
+            <h3 class="cat-title">Fresh Produce</h3>
+            <p class="cat-desc">A crispy, vibrant selection of fresh vegetables, fruits, and greens sourced to complete your family's grocery list.</p>
+            <div class="cat-arrow">&#8594;</div>
+          </article>
+
+          <article class="cat-card reveal" style="--delay:0.25s; background-image:url('images/cat-groceries.jpg')" id="cat-groceries">
+            <div class="cat-card-accent"></div>
+            <div class="cat-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.29 5.17A2 2 0 006.5 21h11.41a2 2 0 001.79-2.83L17 13M9 21h0M15 21h0"/></svg>
+            </div>
+            <h3 class="cat-title">Groceries</h3>
+            <p class="cat-desc">All kinds of everyday grocery essentials, from canned goods and spices to authentic cooking ingredients.</p>
+            <div class="cat-arrow">&#8594;</div>
+          </article>
+
+          <article class="cat-card reveal" style="--delay:0.3s; background-image:url('images/cat-beer.jpg')" id="cat-beer">
+            <div class="cat-card-accent"></div>
+            <div class="cat-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 10c0 4-4 12-4 12s-4-8-4-12a4 4 0 118 0zM13 10V4"/></svg>
+            </div>
+            <h3 class="cat-title">Chilled Beer & Wine</h3>
+            <p class="cat-desc">Fully stocked walk-in coolers loaded with ice-cold beer, imports, and a fine selection of wine for weekend relaxation.</p>
+            <div class="cat-arrow">&#8594;</div>
+          </article>
+
+          <article class="cat-card reveal" style="--delay:0.35s; background-image:url('images/cat-lottery.jpg')" id="cat-lottery">
+            <div class="cat-card-accent"></div>
+            <div class="cat-icon-wrap" style="color:var(--gold-dk)">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <h3 class="cat-title">The Lucky Lottery</h3>
+            <p class="cat-desc">Known as the Lucky Store in Town! Try your luck with our huge selection of scratch-off tickets and Lotto drawings.</p>
+            <div class="cat-arrow">&#8594;</div>
+          </article>
+
+          <article class="cat-card reveal" style="--delay:0.4s; background-image:url('images/cat-transfer.jpg')" id="cat-transfer">
+            <div class="cat-card-accent"></div>
+            <div class="cat-icon-wrap" style="color:var(--gold-dk)">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </div>
+            <h3 class="cat-title">Money Transfer</h3>
+            <p class="cat-desc">Securely and quickly send money to your loved ones around the world through our authorized SIGUE money transfer desk.</p>
+            <div class="cat-arrow">&#8594;</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="about" class="section why-section">
+      <div class="container why-inner">
+        <div class="why-content reveal">
+          <span class="section-badge section-badge--light">Our Legacy</span>
+          <h2 class="section-title">A Piece of Corpus Christi History</h2>
+          <p class="section-sub" style="margin: 0; text-align: left;">
+            Established in the mid-1950s, this historic building has served the community for generations. Formerly known as Super Max and Super Time Market, we are proud to continue the legacy as <strong>Prescott Meat Market</strong>.
+          </p>
+          
+          <div class="trust-points">
+            <div class="trust-point">
+              <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+              <div>
+                <h4 class="trust-title">Neighborhood Staple</h4>
+                <p class="trust-desc">Families have been shopping here since they were kids. We take pride in friendly service and high standards.</p>
+              </div>
+            </div>
+            <div class="trust-point">
+              <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div>
+                <h4 class="trust-title">Quick In & Out</h4>
+                <p class="trust-desc">Skip the mega-store lines. We prioritize fast checkouts, easy parking, and immediately finding what you need.</p>
+              </div>
+            </div>
+            <div class="trust-point">
+              <div class="trust-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div>
+                <h4 class="trust-title">Great Customer Service</h4>
+                <p class="trust-desc">We greet you with a smile. Whether it's a large catering order or a quick snack, our team goes above and beyond.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-image-frame reveal" style="--delay: 0.2s">
+          <div class="why-image-bg">
+            <div class="why-image-content">
+              <div class="why-floating-badge">
+                <span class="badge-icon">★</span>
+                <span class="badge-text">1950s Legacy</span>
+              </div>
+              <svg class="why-store-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <h3 class="why-store-name">Prescott Meat Market</h3>
+              <p class="why-store-addr">4414 Prescott St, Corpus Christi, TX</p>
+              <div class="why-tags">
+                <span class="why-tag">Fresh Meat</span>
+                <span class="why-tag">Cold Beer</span>
+                <span class="why-tag">Lottery</span>
+                <span class="why-tag">Menudo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (Marquee) -->
+    <section id="reviews" class="section reviews">
+      <div class="container" style="padding-bottom: var(--sp-2);">
+        <div class="section-header reveal" style="margin-bottom: var(--sp-4);">
+          <span class="section-badge">Customer Love</span>
+          <h2 class="section-title">Trusted by Corpus Christi</h2>
+          <div class="rating-summary">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-score">4.8 out of 5</span>
+            <span class="rating-count">Loved by our locals</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-marquee-outer reveal" style="--delay: 0.1s">
+        <div class="reviews-marquee-track" id="reviews-marquee-track">
+          
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">JM</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Jesse Maldonado</span>
+                <span class="reviewer-badge">Customer</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">Local Guide</p>
+            <p class="review-text">"Awesome meat market my husband has been shopping here since he was a kid and I've always bought my menudo packages from yall! He loves the press ham from here! Love the lottery ticket selection great staff also and also great giveaways!!"</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">RQ</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Richard R Quintanilla</span>
+                <span class="reviewer-badge">Local Guide</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">Local Guide</p>
+            <p class="review-text">"My favorite spot for buying lotto tickets. Lots of winning tickets sold here. Definitely the lucky store in town, always friendly service when I stop by!"</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">KM</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Ken Moore</span>
+                <span class="reviewer-badge">Customer</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">Business Owner</p>
+            <p class="review-text">"Great, friendly market. I called from out of town looking for some meats and sausages that I needed for my store's grand opening which was being held the next day... Everything was pulled and labeled. I tell everyone...Go to Prescott's!"</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">MV</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Maria Vargas</span>
+                <span class="reviewer-badge">Customer</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">2 months ago</p>
+            <p class="review-text">"The weekend barbacoa here is absolutely incredible. It melts in your mouth and the flavor is so authentic. I skip the big grocery lines because I can get in and out of here so quickly with everything I need."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">DL</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">David L.</span>
+                <span class="reviewer-badge">Customer</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">4 months ago</p>
+            <p class="review-text">"Best menudo you can find in Corpus Christi, period. I come here almost every week. The beer is always ice cold and the butchers are super friendly and helpful with custom cuts."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">TG</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Tony Garcia</span>
+                <span class="reviewer-badge">Local Guide</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">5 months ago</p>
+            <p class="review-text">"10% off fresh meat on Mondays is an amazing deal. I stock up for the week! The produce is always looking fresh, and it truly is an awesome one-stop shop. Very clean and organized."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">SA</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Sarah Alvarez</span>
+                <span class="reviewer-badge">Customer</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">6 months ago</p>
+            <p class="review-text">"They are so fast with the Sigue money transfers. I used to go to another spot and wait forever. Here, it’s a quick in and out, the people are smiling, and the store just feels historic and welcoming."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">RM</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Raul Martinez</span>
+                <span class="reviewer-badge">Customer</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">7 months ago</p>
+            <p class="review-text">"Bought a scratch-off ticket here on a whim while picking up ribs for the barbecue and walked out a winner! It really is the lucky store. Friendly environment and quality food all around."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-avatar">JG</div>
+              <div class="reviewer-info">
+                <span class="reviewer-name">Jessica Gomez</span>
+                <span class="reviewer-badge">Customer</span>
+              </div>
+            </div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-date">8 months ago</p>
+            <p class="review-text">"I love the ownership here. They truly care about the neighborhood. The meat counter is immaculate, and having an everyday cooked menudo option saves me so much time. Can't recommend them enough."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION & HOURS -->
+    <section id="location" class="section location">
+      <div class="container location-inner">
+        <div class="location-details reveal">
+          <span class="section-badge section-badge--light">Visit Us</span>
+          <h2 class="section-title section-title--light" style="text-align: left;">Stop By & Say Hello</h2>
+          
+          <div class="info-blocks">
+            <div class="info-block">
+              <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+              <div>
+                <p class="info-label">Address</p>
+                <p class="info-value">4414 Prescott St<br>Corpus Christi, TX 78416</p>
+                <a href="https://maps.google.com/?q=4414+Prescott+St,+Corpus+Christi,+TX" target="_blank" rel="noopener noreferrer" class="info-link">Get Directions</a>
+              </div>
+            </div>
+
+            <div class="info-block" style="margin-top: var(--sp-2)">
+              <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <div>
+                <p class="info-label">Call Now</p>
+                <p class="info-value">+1 361-855-7483</p>
+                <a href="tel:+13618557483" class="info-link">Click to call</a>
+              </div>
+            </div>
+
+            <div class="info-block" style="margin-top: var(--sp-2)">
+              <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div style="flex:1;">
+                <p class="info-label">Operating Hours</p>
+                <table class="hours-table">
+                  <tr><td>Mon - Sun</td><td>7:00 AM - 9:30 PM</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-map reveal" style="--delay: 0.2s">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14138.8358485202!2d-97.433291!3d27.749065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86685c2c4d1685e1%3A0x6bba46eed09ffdb3!2s4414%20Prescott%20St%2C%20Corpus%20Christi%2C%20TX%2078416!5e0!3m2!1sen!2sus!4v1716388901235!5m2!1sen!2sus" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Prescott Meat Market on Google Maps">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <div class="footer-logo">Prescott <span>Meat Market</span></div>
+          <div class="footer-logo-sub">Est. Mid 1950s</div>
+          <p class="footer-tagline">Your trusted neighborhood one-stop shop. Fresh meat, cold beer, everyday menudo, and the luckiest lottery spot in Corpus Christi.</p>
+        </div>
+
+        <div class="footer-nav">
+          <h4 class="footer-heading">Navigation</h4>
+          <nav class="footer-links">
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#offer" class="footer-link">Our Market</a>
+            <a href="#about" class="footer-link">About Us</a>
+            <a href="#reviews" class="footer-link">Reviews</a>
+          </nav>
+        </div>
+
+        <div class="footer-nav">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="social-links" style="margin-bottom: var(--sp-3)">
+            <a href="https://www.facebook.com/4414.Prescott/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+          <h4 class="footer-heading" style="margin-bottom: 12px">Email Us</h4>
+          <a href="mailto:prescottmeat@gmail.com" class="footer-contact-link">prescottmeat@gmail.com</a>
+        </div>
+
+        <div class="footer-nav">
+          <h4 class="footer-heading">Location</h4>
+          <address class="footer-address" style="font-style: normal; margin-bottom: 16px;">
+            4414 Prescott St<br>
+            Corpus Christi, TX 78416<br>
+            United States
+          </address>
+          <a href="tel:+13618557483" class="footer-contact-link" style="display: block; font-size: 16px; color: var(--gold); font-weight: 700;">+1 361-855-7483</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p class="footer-copy">&copy; 2026 Prescott Meat Market. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+13618557483" class="mobile-call-btn" aria-label="Call Store">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
