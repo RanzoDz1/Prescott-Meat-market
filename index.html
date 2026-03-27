@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -20,14 +20,14 @@
     "@type": "GroceryStore",
     "name": "Prescott Meat Market",
     "image": "images/hero.jpg",
-    "url": "https://www.facebook.com/4414.Prescott/",
-    "telephone": "+13618557483",
+    "url": "{{SITE_URL}}",
+    "telephone": "{{PHONE_TEL}}",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "4414 Prescott St",
-      "addressLocality": "Corpus Christi",
-      "addressRegion": "TX",
-      "postalCode": "78416",
+      "streetAddress": "{{ADDRESS_STREET}}",
+      "addressLocality": "{{ADDRESS_LOCALITY}}",
+      "addressRegion": "{{ADDRESS_REGION}}",
+      "postalCode": "{{ADDRESS_POSTAL}}",
       "addressCountry": "US"
     },
     "openingHoursSpecification": [
@@ -70,9 +70,9 @@
         </ul>
       </nav>
 
-      <a href="tel:+13618557483" class="header-phone">
+      <a href="tel:{{PHONE_TEL}}" class="header-phone">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        +1 361-855-7483
+        {{PHONE_DISPLAY}}
       </a>
 
       <button class="hamburger" id="hamburger" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -95,7 +95,7 @@
       <li><a href="#reviews" class="mobile-nav-link">Reviews</a></li>
       <li><a href="#location" class="mobile-nav-link">Location & Hours</a></li>
     </ul>
-    <a href="tel:+13618557483" class="mobile-phone-btn">Call Now: 361-855-7483</a>
+    <a href="tel:{{PHONE_TEL}}" class="mobile-phone-btn">Call Now: {{PHONE_DISPLAY_SHORT}}</a>
   </nav>
 
   <main>
@@ -113,7 +113,7 @@
         
         <div class="hero-actions fade-up" style="animation-delay: 0.45s">
           <a href="#location" class="btn btn-gold">Visit Us Today</a>
-          <a href="tel:+13618557483" class="btn btn-outline">Call the Market</a>
+          <a href="tel:{{PHONE_TEL}}" class="btn btn-outline">Call the Market</a>
         </div>
 
         <div class="hero-stats fade-up" style="animation-delay: 0.55s">
@@ -280,7 +280,7 @@
               </div>
               <svg class="why-store-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               <h3 class="why-store-name">Prescott Meat Market</h3>
-              <p class="why-store-addr">4414 Prescott St, Corpus Christi, TX</p>
+              <p class="why-store-addr">{{ADDRESS_STREET}}, Corpus Christi, TX</p>
               <div class="why-tags">
                 <span class="why-tag">Fresh Meat</span>
                 <span class="why-tag">Cold Beer</span>
@@ -442,8 +442,8 @@
               <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
               <div>
                 <p class="info-label">Address</p>
-                <p class="info-value">4414 Prescott St<br>Corpus Christi, TX 78416</p>
-                <a href="https://maps.google.com/?q=4414+Prescott+St,+Corpus+Christi,+TX" target="_blank" rel="noopener noreferrer" class="info-link">Get Directions</a>
+                <p class="info-value">{{ADDRESS_STREET}}<br>{{ADDRESS_CITY_STATE}}</p>
+                <a href="{{GOOGLE_MAPS_URL}}" target="_blank" rel="noopener noreferrer" class="info-link">Get Directions</a>
               </div>
             </div>
 
@@ -451,8 +451,8 @@
               <div class="info-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
               <div>
                 <p class="info-label">Call Now</p>
-                <p class="info-value">+1 361-855-7483</p>
-                <a href="tel:+13618557483" class="info-link">Click to call</a>
+                <p class="info-value">{{PHONE_DISPLAY}}</p>
+                <a href="tel:{{PHONE_TEL}}" class="info-link">Click to call</a>
               </div>
             </div>
 
@@ -470,7 +470,7 @@
 
         <div class="location-map reveal" style="--delay: 0.2s">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14138.8358485202!2d-97.433291!3d27.749065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86685c2c4d1685e1%3A0x6bba46eed09ffdb3!2s4414%20Prescott%20St%2C%20Corpus%20Christi%2C%20TX%2078416!5e0!3m2!1sen!2sus!4v1716388901235!5m2!1sen!2sus" 
+            src="{{GOOGLE_MAPS_EMBED}}" 
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
@@ -506,22 +506,22 @@
         <div class="footer-nav">
           <h4 class="footer-heading">Connect</h4>
           <div class="social-links" style="margin-bottom: var(--sp-3)">
-            <a href="https://www.facebook.com/4414.Prescott/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+            <a href="{{FACEBOOK_URL}}" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
           </div>
           <h4 class="footer-heading" style="margin-bottom: 12px">Email Us</h4>
-          <a href="mailto:prescottmeat@gmail.com" class="footer-contact-link">prescottmeat@gmail.com</a>
+          <a href="mailto:{{EMAIL}}" class="footer-contact-link">{{EMAIL}}</a>
         </div>
 
         <div class="footer-nav">
           <h4 class="footer-heading">Location</h4>
           <address class="footer-address" style="font-style: normal; margin-bottom: 16px;">
-            4414 Prescott St<br>
-            Corpus Christi, TX 78416<br>
+            {{ADDRESS_STREET}}<br>
+            {{ADDRESS_CITY_STATE}}<br>
             United States
           </address>
-          <a href="tel:+13618557483" class="footer-contact-link" style="display: block; font-size: 16px; color: var(--gold); font-weight: 700;">+1 361-855-7483</a>
+          <a href="tel:{{PHONE_TEL}}" class="footer-contact-link" style="display: block; font-size: 16px; color: var(--gold); font-weight: 700;">{{PHONE_DISPLAY}}</a>
         </div>
       </div>
 
@@ -533,7 +533,7 @@
     </div>
   </footer>
 
-  <a href="tel:+13618557483" class="mobile-call-btn" aria-label="Call Store">
+  <a href="tel:{{PHONE_TEL}}" class="mobile-call-btn" aria-label="Call Store">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
   </a>
 
