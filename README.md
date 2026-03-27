@@ -8,16 +8,16 @@ This project uses build-time environment variable injection. Set the following i
 
 | Variable | Description | Example |
 |---|---|---|
-| `PHONE_TEL` | Phone for `tel:` links (no formatting) | `+13618557483` |
-| `PHONE_DISPLAY` | Phone as displayed to users | `+1 361-855-7483` |
-| `PHONE_DISPLAY_SHORT` | Short phone format | `361-855-7483` |
-| `PHONE_SCHEMA` | Phone for Schema.org JSON-LD | `+13618557483` |
+| `PHONE_TEL` | Phone for `tel:` links (no formatting) | `+15551234567` |
+| `PHONE_DISPLAY` | Phone as displayed to users | `+1 555-123-4567` |
+| `PHONE_DISPLAY_SHORT` | Short phone format | `555-123-4567` |
+| `PHONE_SCHEMA` | Phone for Schema.org JSON-LD | `+15551234567` |
 | `EMAIL` | Contact email address | `contact@yourdomain.com` |
-| `ADDRESS_STREET` | Street address | `4414 Prescott St` |
-| `ADDRESS_CITY_STATE` | City, State and ZIP | `Corpus Christi, TX 78416` |
-| `ADDRESS_LOCALITY` | City (for Schema.org) | `Corpus Christi` |
-| `ADDRESS_REGION` | State code (for Schema.org) | `TX` |
-| `ADDRESS_POSTAL` | ZIP code (for Schema.org) | `78416` |
+| `ADDRESS_STREET` | Street address | `123 Main St` |
+| `ADDRESS_CITY_STATE` | City, State and ZIP | `Anytown, US 12345` |
+| `ADDRESS_LOCALITY` | City (for Schema.org) | `Anytown` |
+| `ADDRESS_REGION` | State code (for Schema.org) | `US` |
+| `ADDRESS_POSTAL` | ZIP code (for Schema.org) | `12345` |
 | `SITE_URL` | Canonical site URL (with trailing slash) | `https://yoursite.com/` |
 | `FACEBOOK_URL` | Facebook page URL | `https://www.facebook.com/yourpage` |
 | `GOOGLE_MAPS_URL` | Google Maps directions URL | `https://maps.google.com/?q=...` |
