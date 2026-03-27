@@ -544,18 +544,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   min-height: 280px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
-/* Frosted glass overlay */
+/* Dark gradient overlay anchored to bottom — lets photo show through */
 .cat-card::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    145deg,
-    rgba(255,255,255,0.95) 0%,
-    rgba(255,255,255,0.85) 55%,
-    rgba(248,248,244,0.7) 100%
+    to top,
+    rgba(0,0,0,0.82) 0%,
+    rgba(0,0,0,0.45) 50%,
+    rgba(0,0,0,0.10) 100%
   );
   border-radius: calc(var(--radius-md) - 1px);
   z-index: 0;
@@ -564,14 +565,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .cat-card:hover::before {
   background: linear-gradient(
-    145deg,
-    rgba(255,255,255,0.85) 0%,
-    rgba(255,255,255,0.75) 55%,
-    rgba(248,248,244,0.6) 100%
+    to top,
+    rgba(0,0,0,0.92) 0%,
+    rgba(0,0,0,0.60) 55%,
+    rgba(0,0,0,0.18) 100%
   );
 }
 
-/* Content layer */
 .cat-card-accent,
 .cat-icon-wrap,
 .cat-title,
@@ -579,16 +579,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .cat-arrow { position: relative; z-index: 1; }
 
 .cat-icon-wrap {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, rgba(163,29,36,0.15), rgba(163,29,36,0.05));
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.15);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+  color: var(--gold);
   margin-bottom: var(--sp-2);
   transition: all var(--transition);
+  backdrop-filter: blur(4px);
 }
 
 .cat-card:hover {
@@ -606,26 +607,27 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 19px;
-  color: var(--charcoal);
+  color: #fff;
   margin-bottom: 6px;
   transition: color var(--transition);
   line-height: 1.2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
-.cat-card:hover .cat-title { color: var(--primary); }
+.cat-card:hover .cat-title { color: var(--gold); }
 
-.cat-desc { font-size: 14px; color: var(--charcoal); line-height: 1.6; font-weight: 500; }
+.cat-desc { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.6; font-weight: 500; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
 
 .cat-arrow {
   margin-top: auto;
   align-self: flex-end;
   font-size: 18px;
-  color: var(--primary-lt);
+  color: var(--gold);
   transition: all var(--transition);
   padding-top: var(--sp-2);
 }
 
-.cat-card:hover .cat-arrow { color: var(--primary); transform: translateX(4px); }
+.cat-card:hover .cat-arrow { color: #fff; transform: translateX(4px); }
 
 /* ══════════════════════════════════════════
    WHY PRESCOTT (ABOUT)
@@ -873,6 +875,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: var(--sp-2);
   display: -webkit-box;
   -webkit-line-clamp: 5;
+  line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
