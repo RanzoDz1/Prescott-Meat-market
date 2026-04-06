@@ -788,27 +788,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .rating-count { font-size: 15px; color: var(--gray); font-weight: 500;}
 
-/* Marquee wrapper */
+/* Carousel wrapper */
 .reviews-marquee-outer {
   position: relative;
   overflow: hidden;
   padding: var(--sp-2) 0 var(--sp-4);
-  /* Elegant edge fade */
-  mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
 }
 
 .reviews-marquee-track {
   display: flex;
   gap: 24px;
-  width: max-content;
-  will-change: transform; /* Managed by JS rAF */
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
+  will-change: auto;
 }
+.reviews-marquee-track::-webkit-scrollbar { display: none; }
 
 /* ── Review Card ── */
 .review-card {
-  width: 400px;
+  flex: 0 0 calc(33.333% - 16px);
+  min-width: 0;
   flex-shrink: 0;
+  scroll-snap-align: start;
   background: var(--white);
   border-left: 5px solid var(--primary);
   border-radius: var(--radius-md);
@@ -893,6 +898,40 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .reviews-cta {
   text-align: center;
   margin-top: var(--sp-4);
+}
+
+/* Reviews Navigation */
+.reviews-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: var(--sp-4);
+}
+.reviews-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--white);
+  color: var(--charcoal);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+.reviews-arrow:hover {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+.reviews-arrow.hidden {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 /* ══════════════════════════════════════════
@@ -1120,6 +1159,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .location-inner { gap: var(--sp-6); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
   .hero-headline { font-size: 56px; }
+  .review-card { flex: 0 0 calc(50% - 12px); }
 }
 
 /* ══════════════════════════════════════════
@@ -1158,7 +1198,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .why-inner { grid-template-columns: 1fr; gap: var(--sp-4); }
   .why-image-bg { min-height: 300px; }
 
-  .review-card { width: 320px; }
+  .review-card { flex: 0 0 100%; }
 
   .location-inner { grid-template-columns: 1fr; gap: var(--sp-6); }
   .location-map iframe { height: 320px; }
@@ -1216,7 +1256,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
   .fade-up { opacity: 1; transform: none; }
-  .reviews-marquee-track { will-change: auto; }
+  .reviews-marquee-track { scroll-behavior: auto; }
 }
 /* ══════════════════════════════════════════
    CATEGORY MODAL STYLES

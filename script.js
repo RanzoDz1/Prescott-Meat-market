@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════
    PRESCOTT MEAT MARKET — MAIN SCRIPT
    Vanilla JS: header, mobile menu, scroll reveal,
-   reviews marquee (rAF smooth scroll), FAQ accordion
+   reviews snap carousel, FAQ accordion
    ═══════════════════════════════════════════════════ */
 
 (function () {
@@ -70,108 +70,51 @@
   }
 
   /* ══════════════════════════════════════════
-     REVIEWS MARQUEE — rAF smooth infinite scroll
+     REVIEWS SNAP CAROUSEL
   ══════════════════════════════════════════ */
-  const marqueeTrack = $('#reviews-marquee-track');
-  const marqueeOuter = marqueeTrack ? marqueeTrack.parentElement : null;
+  (function initReviewsCarousel() {
+    var track = document.getElementById('reviews-marquee-track');
+    if (!track) return;
 
-  if (marqueeTrack && marqueeOuter) {
-    /* Clone cards */
-    const origCards = [...marqueeTrack.children];
-    origCards.forEach(card => {
-      const clone = card.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      clone.querySelectorAll('a').forEach(a => a.setAttribute('tabindex', '-1'));
-      marqueeTrack.appendChild(clone);
-    });
+    var leftBtn = document.querySelector('.reviews-arrow.left');
+    var rightBtn = document.querySelector('.reviews-arrow.right');
 
-    marqueeTrack.style.animation = 'none';
-
-    let scrollPos  = 0;
-    const SPEED    = 0.6; // px per frame
-    let   paused   = false;
-    let   rafId    = null;
-    let   halfWidth = 0;
-
-    function measureHalf() { halfWidth = marqueeTrack.scrollWidth / 2; }
-
-    function step() {
-      if (!paused && halfWidth > 0) {
-        scrollPos += SPEED;
-        if (scrollPos >= halfWidth) scrollPos -= halfWidth;
-        marqueeTrack.style.transform = `translateX(-${scrollPos}px)`;
-      }
-      rafId = requestAnimationFrame(step);
+    function getScrollAmount() {
+      var card = track.querySelector('.review-card');
+      if (!card) return track.clientWidth;
+      var gap = parseFloat(window.getComputedStyle(track).gap) || 24;
+      return card.offsetWidth + gap;
     }
 
-    marqueeOuter.addEventListener('mouseenter', () => { paused = true;  });
-    marqueeOuter.addEventListener('mouseleave', () => { paused = false; });
-
-    /* ── Touch momentum for reviews marquee ── */
-    let touchStartX  = 0;
-    let touchStartPos = 0;
-    let touchLastX    = 0;
-    let touchLastTime = 0;
-    let velocity       = 0;
-    let momentumRaf    = null;
-    let touchTimer     = null;
-    const FRICTION     = 0.95;
-
-    marqueeOuter.addEventListener('touchstart', function (e) {
-      paused = true;
-      clearTimeout(touchTimer);
-      if (momentumRaf) { cancelAnimationFrame(momentumRaf); momentumRaf = null; }
-      velocity = 0;
-      touchStartX   = e.touches[0].clientX;
-      touchStartPos = scrollPos;
-      touchLastX    = touchStartX;
-      touchLastTime = Date.now();
-    }, { passive: true });
-
-    marqueeOuter.addEventListener('touchmove', function (e) {
-      var x    = e.touches[0].clientX;
-      var dx   = touchStartX - x;
-      var now  = Date.now();
-      var dt   = now - touchLastTime;
-      if (dt > 0) velocity = (touchLastX - x) / dt; // px/ms
-      touchLastX    = x;
-      touchLastTime = now;
-      scrollPos = touchStartPos + dx;
-      if (halfWidth > 0) {
-        scrollPos = ((scrollPos % halfWidth) + halfWidth) % halfWidth;
-      }
-      marqueeTrack.style.transform = 'translateX(-' + scrollPos + 'px)';
-    }, { passive: true });
-
-    marqueeOuter.addEventListener('touchend', function () {
-      function momentumStep() {
-        if (Math.abs(velocity) < 0.01) {
-          touchTimer = setTimeout(function () { paused = false; }, 1500);
-          return;
-        }
-        scrollPos += velocity * 16; // ~16ms per frame
-        velocity  *= FRICTION;
-        if (halfWidth > 0) {
-          scrollPos = ((scrollPos % halfWidth) + halfWidth) % halfWidth;
-        }
-        marqueeTrack.style.transform = 'translateX(-' + scrollPos + 'px)';
-        momentumRaf = requestAnimationFrame(momentumStep);
-      }
-      momentumRaf = requestAnimationFrame(momentumStep);
-    }, { passive: true });
-
-    window.addEventListener('load', () => {
-      measureHalf();
-      step();
-    });
-
-    if (document.readyState === 'complete') {
-      measureHalf();
-      if (!rafId) step();
+    function updateArrows() {
+      if (!leftBtn || !rightBtn) return;
+      leftBtn.classList.toggle('hidden', track.scrollLeft <= 2);
+      rightBtn.classList.toggle('hidden', track.scrollLeft >= track.scrollWidth - track.clientWidth - 2);
     }
 
-    window.addEventListener('resize', measureHalf, { passive: true });
-  }
+    if (leftBtn) leftBtn.addEventListener('click', function() {
+      track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      clearInterval(autoTimer);
+    });
+    if (rightBtn) rightBtn.addEventListener('click', function() {
+      track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      clearInterval(autoTimer);
+    });
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    setTimeout(updateArrows, 300);
+
+    var autoTimer = setInterval(function() {
+      if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      }
+    }, 4500);
+
+    track.addEventListener('touchstart', function() { clearInterval(autoTimer); }, { passive: true });
+  })();
 
   /* ══════════════════════════════════════════
      FAQ ACCORDION
