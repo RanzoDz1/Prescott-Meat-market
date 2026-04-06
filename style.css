@@ -1155,7 +1155,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     scrollbar-width: none;
   }
   .bento-grid::-webkit-scrollbar { display: none; }
-  .cat-card { flex: 0 0 78vw; scroll-snap-align: start; }
+  .cat-card { flex: 0 0 78vw; min-width: 78vw; scroll-snap-align: start; }
 
   .why-inner { grid-template-columns: 1fr; gap: var(--sp-4); }
   .why-image-bg { min-height: 300px; }
