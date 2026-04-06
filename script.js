@@ -17,21 +17,12 @@
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
   /* ══════════════════════════════════════════
-     STICKY HEADER + HIDE ON SCROLL DOWN
+     STICKY HEADER — always visible
   ══════════════════════════════════════════ */
   const header = $('#site-header');
-  if (header) header.style.transition = 'transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s';
-  var lastScrollY = 0;
   window.addEventListener('scroll', () => {
     if (!header) return;
-    var y = window.scrollY;
-    header.classList.toggle('scrolled', y > 10);
-    if (y > 120 && y > lastScrollY) {
-      header.style.transform = 'translateY(-100%)';
-    } else {
-      header.style.transform = 'translateY(0)';
-    }
-    lastScrollY = y;
+    header.classList.toggle('scrolled', window.scrollY > 10);
   }, { passive: true });
 
   /* ══════════════════════════════════════════
@@ -116,13 +107,57 @@
     marqueeOuter.addEventListener('mouseenter', () => { paused = true;  });
     marqueeOuter.addEventListener('mouseleave', () => { paused = false; });
 
-    let touchTimer = null;
-    marqueeOuter.addEventListener('touchstart', () => {
+    /* ── Touch momentum for reviews marquee ── */
+    let touchStartX  = 0;
+    let touchStartPos = 0;
+    let touchLastX    = 0;
+    let touchLastTime = 0;
+    let velocity       = 0;
+    let momentumRaf    = null;
+    let touchTimer     = null;
+    const FRICTION     = 0.95;
+
+    marqueeOuter.addEventListener('touchstart', function (e) {
       paused = true;
       clearTimeout(touchTimer);
+      if (momentumRaf) { cancelAnimationFrame(momentumRaf); momentumRaf = null; }
+      velocity = 0;
+      touchStartX   = e.touches[0].clientX;
+      touchStartPos = scrollPos;
+      touchLastX    = touchStartX;
+      touchLastTime = Date.now();
     }, { passive: true });
-    marqueeOuter.addEventListener('touchend', () => {
-      touchTimer = setTimeout(() => { paused = false; }, 2000);
+
+    marqueeOuter.addEventListener('touchmove', function (e) {
+      var x    = e.touches[0].clientX;
+      var dx   = touchStartX - x;
+      var now  = Date.now();
+      var dt   = now - touchLastTime;
+      if (dt > 0) velocity = (touchLastX - x) / dt; // px/ms
+      touchLastX    = x;
+      touchLastTime = now;
+      scrollPos = touchStartPos + dx;
+      if (halfWidth > 0) {
+        scrollPos = ((scrollPos % halfWidth) + halfWidth) % halfWidth;
+      }
+      marqueeTrack.style.transform = 'translateX(-' + scrollPos + 'px)';
+    }, { passive: true });
+
+    marqueeOuter.addEventListener('touchend', function () {
+      function momentumStep() {
+        if (Math.abs(velocity) < 0.01) {
+          touchTimer = setTimeout(function () { paused = false; }, 1500);
+          return;
+        }
+        scrollPos += velocity * 16; // ~16ms per frame
+        velocity  *= FRICTION;
+        if (halfWidth > 0) {
+          scrollPos = ((scrollPos % halfWidth) + halfWidth) % halfWidth;
+        }
+        marqueeTrack.style.transform = 'translateX(-' + scrollPos + 'px)';
+        momentumRaf = requestAnimationFrame(momentumStep);
+      }
+      momentumRaf = requestAnimationFrame(momentumStep);
     }, { passive: true });
 
     window.addEventListener('load', () => {
@@ -136,6 +171,38 @@
     }
 
     window.addEventListener('resize', measureHalf, { passive: true });
+  }
+
+  /* ══════════════════════════════════════════
+     CAROUSEL ARROWS (BENTO-GRID)
+  ══════════════════════════════════════════ */
+  const bentoGrid = $('.bento-grid');
+  const arrowLeft  = $('.carousel-arrow--left');
+  const arrowRight = $('.carousel-arrow--right');
+
+  if (bentoGrid && arrowLeft && arrowRight) {
+    function updateArrows() {
+      var sl = bentoGrid.scrollLeft;
+      var maxScroll = bentoGrid.scrollWidth - bentoGrid.clientWidth;
+      arrowLeft.style.opacity  = sl > 4 ? '1' : '0';
+      arrowLeft.style.pointerEvents = sl > 4 ? 'auto' : 'none';
+      arrowRight.style.opacity = sl < maxScroll - 4 ? '1' : '0';
+      arrowRight.style.pointerEvents = sl < maxScroll - 4 ? 'auto' : 'none';
+    }
+
+    arrowLeft.addEventListener('click', function () {
+      bentoGrid.scrollBy({ left: -(bentoGrid.clientWidth * 0.8), behavior: 'smooth' });
+    });
+
+    arrowRight.addEventListener('click', function () {
+      bentoGrid.scrollBy({ left: bentoGrid.clientWidth * 0.8, behavior: 'smooth' });
+    });
+
+    bentoGrid.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+
+    // Initial check
+    setTimeout(updateArrows, 100);
   }
 
   /* ══════════════════════════════════════════

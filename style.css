@@ -1175,7 +1175,67 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
   .location-actions { flex-direction: column; }
   .location-actions .btn { justify-content: center; }
+
+  /* Trust points — premium 2-column badge grid */
+  .trust-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: var(--sp-4);
+  }
+  .trust-point {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--sp-1);
+  }
+  .trust-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    margin: 0 auto 4px;
+  }
+  .trust-title {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .trust-desc {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  /* Carousel arrow buttons */
+  .carousel-wrap { position: relative; }
+  .carousel-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--charcoal);
+    transition: all var(--transition);
+  }
+  .carousel-arrow:hover { background: var(--gold); color: var(--white); }
+  .carousel-arrow--left  { left: 4px; }
+  .carousel-arrow--right { right: 4px; }
 }
+
+/* ── Carousel arrows (hidden on desktop) ── */
+.carousel-arrow { display: none; }
 
 /* ── Focus accessible ── */
 :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
