@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   PRESCOTT MEAT MARKET — MAIN STYLESHEET
+   PRESCOTT MEAT MARKET - MAIN STYLESHEET
    Design System: Deep Crimson #A31D24 | Lucky Gold #D4AF37
    ═══════════════════════════════════════════════════ */
 
@@ -547,7 +547,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   justify-content: flex-end;
 }
 
-/* Dark gradient overlay anchored to bottom — lets photo show through */
+/* Dark gradient overlay anchored to bottom - lets photo show through */
 .cat-card::before {
   content: '';
   position: absolute;
@@ -759,7 +759,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ══════════════════════════════════════════
-   REVIEWS — MARQUEE
+   REVIEWS - MARQUEE
 ══════════════════════════════════════════ */
 .reviews {
   background: var(--cream);
@@ -1111,7 +1111,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ══════════════════════════════════════════
-   RESPONSIVE — TABLET
+   RESPONSIVE - TABLET
 ══════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .section { padding: var(--sp-6) 0; }
@@ -1123,7 +1123,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ══════════════════════════════════════════
-   RESPONSIVE — MOBILE
+   RESPONSIVE - MOBILE
 ══════════════════════════════════════════ */
 @media (max-width: 768px) {
   :root { --header-h: 70px; }
@@ -1145,17 +1145,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .section-title { font-size: 32px; text-align: center !important; }
   .section-sub   { font-size: 15px; }
 
+  /* Category grid: 2-column compact grid */
   .bento-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    padding: 0 16px 12px;
-    scrollbar-width: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
-  .bento-grid::-webkit-scrollbar { display: none; }
-  .cat-card { flex: 0 0 78vw; min-width: 78vw; scroll-snap-align: start; }
+  .cat-card {
+    min-height: 160px;
+  }
 
   .why-inner { grid-template-columns: 1fr; gap: var(--sp-4); }
   .why-image-bg { min-height: 300px; }
@@ -1176,7 +1174,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .location-actions { flex-direction: column; }
   .location-actions .btn { justify-content: center; }
 
-  /* Trust points — premium 2-column badge grid */
+  /* Trust points - premium 2-column badge grid */
   .trust-points {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1208,34 +1206,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     line-height: 1.45;
   }
 
-  /* Carousel arrow buttons */
-  .carousel-wrap { position: relative; }
-  .carousel-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--white);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-    border: none;
-    z-index: 10;
-    cursor: pointer;
-    font-size: 18px;
-    color: var(--charcoal);
-    transition: all var(--transition);
-  }
-  .carousel-arrow:hover { background: var(--gold); color: var(--white); }
-  .carousel-arrow--left  { left: 4px; }
-  .carousel-arrow--right { right: 4px; }
 }
-
-/* ── Carousel arrows (hidden on desktop) ── */
-.carousel-arrow { display: none; }
 
 /* ── Focus accessible ── */
 :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
